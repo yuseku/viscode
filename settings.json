@@ -1,0 +1,121 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.activityBar.visible": false,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["<S-l>"],
+        "commands": [":tabnext"]
+      },
+      {
+        "before": ["<S-h>"],
+        "commands": [":tabprev"]
+      },
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      },
+      {
+        "before": ["K"],
+        "commands": ["lineBreakInsert"],
+        "silent": true
+      },
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["<S-l>"],
+        "commands": [":tabnext"]
+      },
+      {
+        "before": ["<S-h>"],
+        "commands": [":tabprev"]
+      },
+      {
+        "before": ["<C-h>"],
+        "commands": [":tabm -"]
+      },
+      {
+        "before": ["<C-l>"],
+        "commands": [":tabm +"]
+      },
+      { // Go to Definition
+        "before": ["<leader>", "g", "d"],
+        "commands": ["editor.action.revealDefinition"]
+      },
+      { // Go to References
+        "before": ["<leader>", "v", "r"],
+        "commands": ["editor.action.goToReferences"]
+      },
+      {
+        "before": ["<leader>", "v", "h"],
+        "commands": ["editor.action.showHover"]
+      },
+      { // Show Editor Context Menu
+        "before": ["<leader>", "v", "c"],
+        "commands": ["editor.action.showContextMenu"]
+      },
+      { // Project files 
+        "before": ["<leader>", "p", "f"],
+        "commands": ["find-it-faster.findFiles"]
+      },
+      { // Project files with filter 
+        "before": ["<leader>", "p", "f", "f"],
+        "commands": ["find-it-faster.findFilesWithType"]
+      },
+      { // Project search 
+        "before": ["<leader>", "p", "s"],
+        "commands": ["find-it-faster.findWithinFiles"]
+      },
+      { // Project search with fitler 
+        "before": ["<leader>", "p", "s", "f"],
+        "commands": ["find-it-faster.findWithinFilesWithType"]
+      },
+      {
+        "before": ["<leader>", "e"],
+        "commands": ["workbench.explorer.fileView.focus"]
+      }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false,
+      "<C-b>": false,
+      "<C-n>": false,
+      "<C-l>": true,
+      "<C-h>": true,
+      "space e": false,
+      "space ps": true
+    },
+    "editor.cursorBlinking": "solid",
+    "window.title": "${folderName}/${activeEditorShort}",
+    "workbench.editor.enablePreview": false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.fontSize": 18,
+    "editor.fontWeight": "400",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "nerdtree.hideSidebarWhenOpenFile": true,
+    "nerdtree.alwaysShowSidebar": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "glassit.alpha": 240,
+    "window.menuBarVisibility": "compact"
+}
