@@ -14,6 +14,16 @@ This repository contains my personal config for vscode inspired by neovim.
 - `<leader>pff` - Search for files with filters
 - `<leader>ps` - Search for text
 - `<leader>psf` - Search for text with filters
+- `<leader>d` - Delete with void registry
+- `<leader>p` - Paste with void registry
+- `<leader>q` - Close buffer
+
+### Explorer:
+- `r` - rename file
+- `d` - remove file
+- `c` - copy file
+- `p` - paste file
+- `y` - copy relative file path  
 
 ## Extensions:
 - [`Vim`](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
