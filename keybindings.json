@@ -36,5 +36,41 @@
         "key": "space e", // toggle
         "command": "workbench.action.closeSidebar", // close sidebar
         "when": "sideBarVisible && vim.mode === 'Normal'" // apply when sidebar is visible
-    }
+    },
+    {
+        "key": "ctrl+j",
+        "command": "cursorUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "cursorDown",
+        "when": "terminalFocus"
+    },
+    // Nerdtree inspirated shortcuts
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "c",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    }, 
+    {
+        "key": "y",
+        "command": "copyRelativeFilePath",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    }, 
 ]

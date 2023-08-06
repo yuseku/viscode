@@ -89,7 +89,21 @@
       {
         "before": ["<leader>", "e"],
         "commands": ["workbench.explorer.fileView.focus"]
+      },
+      {
+        "before": ["<leader>", "q"],
+        "commands": ["workbench.action.closeActiveEditor"]
       }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+      {
+          "before": ["<leader>", "d"],
+          "after": [ "\"", "_", "d" ]
+      },
+      {
+          "before": ["<leader>", "p"],
+          "after": [ "\"", "_", "d", "P" ]
+      },
     ],
     "vim.leader": "<space>",
     "vim.handleKeys": {
@@ -117,5 +131,10 @@
     "window.commandCenter": false,
     "workbench.layoutControl.enabled": false,
     "glassit.alpha": 240,
-    "window.menuBarVisibility": "compact"
+    "window.menuBarVisibility": "compact",
+    "editor.cursorStyle": "block",
+    // "vscode_custom_css.imports": [
+    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.css",
+    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.js"
+    // ]
 }
