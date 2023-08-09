@@ -17,6 +17,8 @@ This repository contains my personal config for vscode inspired by neovim.
 - `<leader>d` - Delete with void registry
 - `<leader>p` - Paste with void registry
 - `<leader>q` - Close buffer
+- `<leader>up` - Upload local file to remote server
+- `<leader>so` - Open workspace session
 
 ### Explorer:
 - `r` - rename file
@@ -30,9 +32,12 @@ This repository contains my personal config for vscode inspired by neovim.
 - [`Catppuccin` (Theme)](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc)
 - [`FintItFaster` (Better search tool)](https://marketplace.visualstudio.com/items?itemName=TomRijndorp.find-it-faster)
     - Requirements:
-        - [`fzf` ("command-line fuzzy finder")](https://github.com/junegunn/fzf)
-        - [`rg` ("ripgrep")](https://github.com/BurntSushi/ripgrep)
-        - [`bat` ("a cat clone with wings")](https://github.com/sharkdp/bat)
+        - [`fzf` (Command-line fuzzy finder)](https://github.com/junegunn/fzf)
+        - [`rg` (Ripgrep)](https://github.com/BurntSushi/ripgrep)
+        - [`bat` (A cat clone with wings)](https://github.com/sharkdp/bat)
 - [`GlassIt` (Provides a transparent background)](https://marketplace.visualstudio.com/items?itemName=s-nlf-fh.glassit)
 - [`NERDTree` (Basic functions to manage files explorer)](https://marketplace.visualstudio.com/items?itemName=Llam4u.nerdtree)
-
+- [`JetBrains Icon Theme`](https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme)
+- [`Sessions` (Create and switch workspaces with a keystroke)](https://marketplace.visualstudio.com/items?itemName=oigene.sessions)
+- [`ftp-sync` (Synchronization of the local workspace (project files) with the server)](https://marketplace.visualstudio.com/items?itemName=lukasz-wronski.ftp-sync)
+    - [Fix for `uploadOnSave` option](https://github.com/lukasz-wronski/vscode-ftp-sync/issues/307)
