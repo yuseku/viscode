@@ -42,7 +42,7 @@ This repository contains my personal config for vscode inspired by neovim.
 - [`ftp-sync` (Synchronization of the local workspace (project files) with the server)](https://marketplace.visualstudio.com/items?itemName=lukasz-wronski.ftp-sync)
     - [Fix for `uploadOnSave` option](https://github.com/lukasz-wronski/vscode-ftp-sync/issues/307)
 
-### ftp-sync configuration
+### `ftp-sync` configuration
 
 Config:
 ```bash
@@ -69,7 +69,7 @@ Generated key must be in PEM:
 ssh-keygen -f ~/.ssh/id_rsa_custom -m PEM -t rsa -C "user"
 ```
 
-In addition, on windows, the **privateKeyPath** must have double slashes, for example:
+In addition, on windows, the `privateKeyPath` must have double slashes, for example:
 ```bash
 "privateKeyPath": "C:\\Users\\Administrator\\.ssh\\id_rsa_custom" 
 ```
