@@ -1,11 +1,4 @@
 {
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.activityBar.visible": false,
-    "vim.easymotion": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
       {
         "before": ["<S-l>"],
@@ -93,7 +86,23 @@
       {
         "before": ["<leader>", "q"],
         "commands": ["workbench.action.closeActiveEditor"]
-      }
+      },
+      {
+        "before": ["<leader>", "u", "p"],
+        "commands": ["extension.ftpsyncuploadselected"]
+      },
+      {
+        "before": ["<leader>", "s", "o"],
+        "commands": ["sessions.open"]
+      },
+      { // Keep cursor in the middle when ctrl + d
+          "before": ["<C-d>"],
+          "after": [ "<C-d>", "z", "z"]
+      },
+      { // Keep cursor in the middle when ctrl + u
+          "before": ["<C-u>"],
+          "after": [ "<C-u>", "z", "z"]
+      },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
       {
@@ -105,7 +114,6 @@
           "after": [ "\"", "_", "d", "P" ]
       },
     ],
-    "vim.leader": "<space>",
     "vim.handleKeys": {
       "<C-a>": false,
       "<C-f>": false,
@@ -116,25 +124,38 @@
       "space e": false,
       "space ps": true
     },
+    // "vscode_custom_css.imports": [
+    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.css",
+    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.js"
+    // ],
+    "vim.leader": "<space>",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.activityBar.visible": false,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
     "editor.cursorBlinking": "solid",
     "window.title": "${folderName}/${activeEditorShort}",
     "workbench.editor.enablePreview": false,
     "editor.scrollBeyondLastLine": false,
-    "editor.fontSize": 18,
-    "editor.fontWeight": "400",
+    "editor.fontSize": 19,
+    "editor.fontWeight": "500",
     "editor.fontFamily": "JetBrains Mono",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "nerdtree.hideSidebarWhenOpenFile": true,
     "nerdtree.alwaysShowSidebar": false,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "window.commandCenter": false,
     "workbench.layoutControl.enabled": false,
-    "glassit.alpha": 240,
-    "window.menuBarVisibility": "compact",
+    "glassit.alpha": 245,
+    "window.menuBarVisibility": "toggle",
     "editor.cursorStyle": "block",
-    // "vscode_custom_css.imports": [
-    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.css",
-    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.js"
-    // ]
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 0.50,
+    "editor.cursorSurroundingLines": 8 // Keep your cursor centered
 }
