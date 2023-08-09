@@ -41,3 +41,35 @@ This repository contains my personal config for vscode inspired by neovim.
 - [`Sessions` (Create and switch workspaces with a keystroke)](https://marketplace.visualstudio.com/items?itemName=oigene.sessions)
 - [`ftp-sync` (Synchronization of the local workspace (project files) with the server)](https://marketplace.visualstudio.com/items?itemName=lukasz-wronski.ftp-sync)
     - [Fix for `uploadOnSave` option](https://github.com/lukasz-wronski/vscode-ftp-sync/issues/307)
+
+### ftp-sync configuration
+
+Config:
+```bash
+{
+    "remotePath": "/home/user/project/",
+    "host": "000.00.00.000",
+    "username": "user",
+    "port": 00000,
+    "protocol": "sftp",
+    "uploadOnSave": false,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": "/home/user/.ssh/id_rsa_dev",
+    "ignore": [
+        "\\.vscode",
+        "\\.git"
+    ]
+}
+
+```
+
+Generated key must be in PEM:
+```bash
+ssh-keygen -f ~/.ssh/id_rsa_custom -m PEM -t rsa -C "user"
+```
+
+In addition, on windows, the **privateKeyPath** must have double slashes, for example:
+```bash
+"privateKeyPath": "C:\\Users\\Administrator\\.ssh\\id_rsa_custom" 
+```
