@@ -19,23 +19,54 @@
         "command": "workbench.action.quickOpenSelectPrevious",
         "when": "inQuickOpen"
     },
+
+    // Switch tabs
     {
-        "key": "ctrl+shift+l",
-        "command": "vim.remap",
-        "when": "inputFocus && vim.mode == 'Normal'",
-        "args": {
-            "after": [":tabm +"]
-        }
+        "key": "shift+l",
+        "command": "workbench.action.nextEditor",
+        "when": "activeEditor == 'workbench.editor.keybindings' || activeEditor == 'workbench.editor.settings2' || activeEditor == 'workbench.editor.extension' || activeEditor == 'gettingStartedPage'",
     },
     {
-        "key": "ctrl+shift+h",
-        "command": "-workbench.action.replaceInFiles"
+        "key": "shift+h",
+        "command": "workbench.action.previousEditor",
+        "when": "activeEditor == 'workbench.editor.keybindings' || activeEditor == 'workbench.editor.settings2' || activeEditor == 'workbench.editor.extension' || activeEditor == 'gettingStartedPage'",
+    },
+
+    // Close tab
+    {
+        "key": "space q",
+        "command": "workbench.action.closeActiveEditor", // close sidebar
+        "when": "activeEditor == 'workbench.editor.keybindings' || activeEditor == 'workbench.editor.settings2' || activeEditor == 'workbench.editor.extension' || activeEditor == 'gettingStartedPage'",
+    },
+
+    // Toggle sidebar
+    {
+        "key": "space e",
+        "command": "workbench.action.closeSidebar",
+        "when": "sideBarVisible && vim.mode === 'Normal' && !inputFocus"
     },
     {
-        "key": "space e", // toggle
-        "command": "workbench.action.closeSidebar", // close sidebar
-        "when": "sideBarVisible && vim.mode === 'Normal'" // apply when sidebar is visible
+        "key": "space e",
+        "command": "workbench.action.closeSidebar",
+        "when": "!activeEditor && sideBarVisible"
     },
+    {
+        "key": "space e",
+        "command": "workbench.explorer.fileView.focus",
+        "when": "!activeEditor && !sideBarVisible"
+    },
+    {
+        "key": "space e",
+        "command": "workbench.action.closeSidebar",
+        "when": "activeEditor == 'gettingStartedPage' && sideBarVisible"
+    },
+    {
+        "key": "space e",
+        "command": "workbench.explorer.fileView.focus",
+        "when": "activeEditor == 'gettingStartedPage' && !sideBarVisible"
+    },
+
+    // Terminal J/K navigation
     {
         "key": "ctrl+j",
         "command": "cursorUp",
@@ -46,30 +77,90 @@
         "command": "cursorDown",
         "when": "terminalFocus"
     },
+
     // Nerdtree inspirated shortcuts
+
+    // Rename file
     {
         "key": "r",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
+
+    // Delete file
     {
         "key": "d",
         "command": "deleteFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
+
+    // Create file
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    }, 
+
+    // Create folder
+    {
+        "key": "m",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // Copy file
     {
         "key": "c",
         "command": "filesExplorer.copy",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
+
+    // Paste file
     {
         "key": "p",
         "command": "filesExplorer.paste",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     }, 
+
+    // Copy relative file path
     {
         "key": "y",
         "command": "copyRelativeFilePath",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     }, 
+
+    // Open file
+    {
+        "key": "o",
+        "command": "runCommands",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus && listFocus",
+        "args": {
+            "commands": [
+                "list.select",
+                "workbench.action.closeSidebar"
+            ]
+        }
+    },
+
+    // Other
+    {
+        "key": "ctrl+h",
+        "command": "cursorLeft",
+        "when": "notificationFocus"
+    },
+    {
+        "key": "f8",
+        "command": "workbench.action.inspectContextKeys"
+    },
+
+    // Unbind
+    {
+        "key": "ctrl+shift+h",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
 ]

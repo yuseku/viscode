@@ -1,36 +1,28 @@
 {
+    // Vim insert mode keybindings
     "vim.insertModeKeyBindings": [
-      {
-        "before": ["<S-l>"],
-        "commands": [":tabnext"]
-      },
-      {
-        "before": ["<S-h>"],
-        "commands": [":tabprev"]
-      },
       {
         "before": ["j", "j"],
         "after": ["<Esc>"]
       }
     ],
+
+    // Vim normal mode keybindings
     "vim.normalModeKeyBindingsNonRecursive": [
+      // Delete current line
       {
         "before": ["<leader>", "d"],
         "after": ["d", "d"]
       },
-      {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
-      },
+
+      // Break line at the bottom 
       {
         "before": ["K"],
         "commands": ["lineBreakInsert"],
         "silent": true
       },
-      {
-        "before": ["<leader>", "d"],
-        "after": ["d", "d"]
-      },
+
+      // Switch tabs
       {
         "before": ["<S-l>"],
         "commands": [":tabnext"]
@@ -39,6 +31,8 @@
         "before": ["<S-h>"],
         "commands": [":tabprev"]
       },
+
+      // Move tabs
       {
         "before": ["<C-h>"],
         "commands": [":tabm -"]
@@ -47,73 +41,134 @@
         "before": ["<C-l>"],
         "commands": [":tabm +"]
       },
-      { // Go to Definition
+
+      // Go to Definition
+      { 
         "before": ["<leader>", "g", "d"],
         "commands": ["editor.action.revealDefinition"]
       },
-      { // Go to References
+
+      // Go to References
+      { 
         "before": ["<leader>", "v", "r"],
         "commands": ["editor.action.goToReferences"]
       },
+
+      // Trigger inline hover
       {
         "before": ["<leader>", "v", "h"],
         "commands": ["editor.action.showHover"]
       },
-      { // Show Editor Context Menu
+
+      // Show Editor Context Menu
+      { 
         "before": ["<leader>", "v", "c"],
         "commands": ["editor.action.showContextMenu"]
       },
-      { // Project files 
+
+      // Project files
+      {  
         "before": ["<leader>", "p", "f"],
         "commands": ["find-it-faster.findFiles"]
       },
-      { // Project files with filter 
+
+      // Project files with filter
+      {  
         "before": ["<leader>", "p", "f", "f"],
         "commands": ["find-it-faster.findFilesWithType"]
       },
-      { // Project search 
+      
+      // Project search
+      {  
         "before": ["<leader>", "p", "s"],
         "commands": ["find-it-faster.findWithinFiles"]
       },
-      { // Project search with fitler 
+
+      // Project search with fitler
+      {  
         "before": ["<leader>", "p", "s", "f"],
         "commands": ["find-it-faster.findWithinFilesWithType"]
       },
+
+      // Toggle sidebar
       {
         "before": ["<leader>", "e"],
         "commands": ["workbench.explorer.fileView.focus"]
       },
+
+      // Close current buffer
       {
         "before": ["<leader>", "q"],
         "commands": ["workbench.action.closeActiveEditor"]
       },
+
+      // Upload file to remote server
       {
         "before": ["<leader>", "u", "p"],
         "commands": ["extension.ftpsyncuploadselected"]
       },
+
+      // Open sessions (aka tmux)
       {
         "before": ["<leader>", "s", "o"],
         "commands": ["sessions.open"]
       },
-      { // Keep cursor in the middle when ctrl + d
-          "before": ["<C-d>"],
-          "after": [ "<C-d>", "z", "z"]
+
+      // Keep cursor in the middle when ctrl + d
+      { 
+        "before": ["<C-d>"],
+        "after": [ "<C-d>", "z", "z"]
       },
-      { // Keep cursor in the middle when ctrl + u
-          "before": ["<C-u>"],
-          "after": [ "<C-u>", "z", "z"]
+      { 
+        "before": ["<C-u>"],
+        "after": [ "<C-u>", "z", "z"]
+      },
+
+      // Disable search highlight
+      { 
+        "before": ["<Esc>"],
+        "commands": [":nohl"],
+      },
+      { 
+        "before": ["<C-c>"],
+        "commands": [":nohl"],
+      },
+
+      // Open git changes
+      {
+        "before" : ["<leader>", "g", "c"],
+        "commands": ["git.openChange"]
+      },
+
+      // Go back to previous cursor position
+      {
+        "before" : ["<leader>", "g", "b"],
+        "commands": ["workbench.action.navigateBack"]
+      },
+
+      // Go forward to previous cursor position
+      {
+        "before" : ["<leader>", "g", "f"],
+        "commands": ["workbench.action.navigateForward"]
       },
     ],
+
+    // Vim visual mode keybindings
     "vim.visualModeKeyBindingsNonRecursive": [
+      // Remove to void register
       {
           "before": ["<leader>", "d"],
           "after": [ "\"", "_", "d" ]
       },
+
+      // Paste to void register
       {
           "before": ["<leader>", "p"],
           "after": [ "\"", "_", "d", "P" ]
       },
     ],
+
+    // Disable default keybindings
     "vim.handleKeys": {
       "<C-a>": false,
       "<C-f>": false,
@@ -124,12 +179,21 @@
       "space e": false,
       "space ps": true
     },
-    // "vscode_custom_css.imports": [
-    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.css",
-    //   "file:///C:/Users/Administrator/AppData/Roaming/Code/User/custom.js"
-    // ],
+
+    // Configure paths or glob patterns to exclude from file watching.
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true,
+      "**/.hg/store/**": true,
+      "**/vendor/*/**": true,
+    },
+
+    "workbench.colorCustomizations": {
+      "editorCursor.foreground": "#826e6e",
+      // "terminalCursor.foreground": "#FF75D8"
+    },
     "vim.leader": "<space>",
-    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.activityBar.visible": false,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -140,7 +204,6 @@
     "window.title": "${folderName}/${activeEditorShort}",
     "workbench.editor.enablePreview": false,
     "editor.scrollBeyondLastLine": false,
-    "editor.fontSize": 19,
     "editor.fontWeight": "500",
     "editor.fontFamily": "JetBrains Mono",
     "editor.fontLigatures": false,
@@ -152,10 +215,16 @@
     "workbench.layoutControl.enabled": false,
     "glassit.alpha": 245,
     "window.menuBarVisibility": "toggle",
-    "editor.cursorStyle": "block",
     "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
     "editor.lineNumbers": "relative",
     "files.autoSave": "afterDelay",
     "window.zoomLevel": 0.50,
-    "editor.cursorSurroundingLines": 8 // Keep your cursor centered
+    "editor.cursorSurroundingLines": 8, // Keep your cursor centered
+    "editor.lineHeight": 1.5,
+    "editor.rulers": [120],
+
+    // Your customizations:
+    "editor.fontSize": 16.5,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "editor.cursorStyle": "block",
 }

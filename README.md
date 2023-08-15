@@ -69,7 +69,7 @@ Generated key must be in PEM:
 ssh-keygen -f ~/.ssh/id_rsa_custom -m PEM -t rsa -C "user"
 ```
 
-In addition, on windows, the `privateKeyPath` must have double slashes, for example:
+In addition, on windows, the `privateKeyPath` must have double backslashes, for example:
 ```bash
 "privateKeyPath": "C:\\Users\\Administrator\\.ssh\\id_rsa_custom" 
 ```
